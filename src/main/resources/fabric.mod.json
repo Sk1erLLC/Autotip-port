@@ -1,11 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "autotip",
+  "id": "${id}",
   "version": "${version}",
-  "name": "Autotip",
+  "name": "${name}",
   "description": "Autotip tips online boosters, and other online autotip users. You send and receive tips, increasing your coin and experience gain.",
   "authors": ["QWERTZ_EXE", "Sk1erLLC"],
-  "contact": {},
+  "contact": {
+    "homepage": "https://modrinth.com/project/LUoYx8LC",
+    "sources": "https://github.com/Sk1erLLC/Autotip-port"
+  },
   "license": "GPL-3.0",
   "icon": "assets/autotip/icon.png",
   "environment": "client",
@@ -15,8 +18,8 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=${loader_version}",
-    "fabric-api": "*",
-    "minecraft": ">=${minecraft_version} <=${max_minecraft_version}"
+    "fabricloader": ">=0.17",
+    "minecraft": "${minecraft}",
+    "fabric-api": "*"
   }
 }

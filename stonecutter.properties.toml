@@ -1,0 +1,50 @@
+mod.id = "autotip"
+mod.name = "AutoTip"
+mod.group = "club.sk1er.mods"
+mod.version = "3.3"
+
+deps.fabric_loader = "0.19.3"
+loomx.loom_version = "1.17-SNAPSHOT"
+deps.essential_partner_mod_integration.version = "1.0.8"
+
+["1.21.8"]
+mod.mc_compat = "1.21.8"
+mod.mc_releases = ["1.21.8"]
+
+deps.fabric_api = "0.136.1+1.21.8"
+deps.essential_partner_mod_integration.minecraft_version = "1.21.8-fabric"
+
+["1.21.10"]
+mod.mc_compat = "1.21.10"
+mod.mc_releases = ["1.21.10"]
+
+deps.fabric_api = "0.138.4+1.21.10"
+deps.essential_partner_mod_integration.minecraft_version = "1.21.9-fabric"
+
+["1.21.11"]
+mod.mc_compat = "1.21.11"
+mod.mc_releases = ["1.21.11"]
+
+deps.fabric_api = "0.141.5+1.21.11"
+deps.essential_partner_mod_integration.minecraft_version = "1.21.11-fabric"
+
+["26.1"]
+mod.mc_compat = "~26.1"
+mod.mc_releases = ["26.1", "26.1.1", "26.1.2"]
+
+deps.fabric_api = "0.155.2+26.1.2"
+deps.essential_partner_mod_integration.minecraft_version = "26.1-fabric"
+
+["26.2"]
+mod.mc_compat = "26.2"
+mod.mc_releases = ["26.2"]
+
+deps.fabric_api = "0.155.2+26.2"
+deps.essential_partner_mod_integration.minecraft_version = "26.2-fabric"
+
+["26.3"]
+mod.mc_compat = "26.3"
+mod.mc_releases = ["26.3"]
+
+deps.fabric_api = "0.160.5+26.3"
+deps.essential_partner_mod_integration.minecraft_version = "26.2-fabric"

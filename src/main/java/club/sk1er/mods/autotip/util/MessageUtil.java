@@ -44,7 +44,11 @@ public class MessageUtil {
         // Must run on render thread
         mc.execute(() -> {
             if (mc.player != null) {
-                mc.player.displayClientMessage(Component.literal(message), false);
+                //? if < 26.1 {
+                // mc.player.displayClientMessage(Component.literal(message), false);
+                //?} else {
+                mc.player.sendSystemMessage(Component.literal(message));
+                //?}
             } else {
                 System.out.println(PREFIX + message);
             }

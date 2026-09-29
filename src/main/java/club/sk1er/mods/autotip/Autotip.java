@@ -32,6 +32,12 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 
 public class Autotip implements ClientModInitializer {
+    public static final String ID = /*$ mod_id*/ "autotip";
+    public static final String NAME = /*$ mod_name*/ "AutoTip";
+    public static final String VERSION = /*$ mod_version*/ "3.3";
+    public static final String MC_VERSION = /*$ minecraft*/ "26.3";
+    public static final String ICON = "/assets/" + ID + "/logo.png";
+
     // NEVER TRUE IN PRODUCTION
     public static final boolean DEBUG = false;
     private MessageUtil messageUtil;
@@ -43,7 +49,6 @@ public class Autotip implements ClientModInitializer {
     private StatsManager statsManager;
     private ChatListener chatListener;
     private Config config;
-    public static final String VERSION = "3.3";
 
     @Override
     public void onInitializeClient() {

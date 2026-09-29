@@ -28,7 +28,11 @@ import club.sk1er.mods.autotip.util.HypixelUtil;
 import club.sk1er.mods.autotip.util.MessageUtil;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
+//? if < 26.1 {
+// import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
+//?} else {
+import net.fabricmc.fabric.api.client.command.v2.ClientCommands;
+//?}
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 
@@ -60,7 +64,11 @@ public class CommandManager {
     }
 
     private LiteralArgumentBuilder<FabricClientCommandSource> buildCommand(String name) {
-        return ClientCommandManager.literal(name)
+        //? if < 26.1 {
+        // return ClientCommandManager.literal(name)
+        //?} else {
+        return ClientCommands.literal(name)
+        //?}
                 .executes(context -> {
                     showHelp();
                     return 1;
@@ -76,7 +84,11 @@ public class CommandManager {
     }
 
     private LiteralArgumentBuilder<FabricClientCommandSource> buildInfoSubcommand(String name) {
-        return ClientCommandManager.literal(name)
+        //? if < 26.1 {
+        // return ClientCommandManager.literal(name)
+        //?} else {
+        return ClientCommands.literal(name)
+        //?}
                 .executes(context -> {
                     showInfo();
                     return 1;
@@ -84,12 +96,20 @@ public class CommandManager {
     }
 
     private LiteralArgumentBuilder<FabricClientCommandSource> buildStatsSubcommand(String name) {
-        return ClientCommandManager.literal(name)
+        //? if < 26.1 {
+        // return ClientCommandManager.literal(name)
+        //?} else {
+        return ClientCommands.literal(name)
+        //?}
                 .executes(context -> {
                     showStats(StatsManager.StatsPeriod.LIFETIME, null);
                     return 1;
                 })
-                .then(ClientCommandManager.argument("period", StringArgumentType.greedyString())
+                //? if < 26.1 {
+                // .then(ClientCommandManager.argument("period", StringArgumentType.greedyString())
+                //?} else {
+                .then(ClientCommands.argument("period", StringArgumentType.greedyString())
+                //?}
                         .suggests((context, builder) -> {
                             builder.suggest("daily");
                             builder.suggest("weekly");
@@ -118,12 +138,20 @@ public class CommandManager {
     }
 
     private LiteralArgumentBuilder<FabricClientCommandSource> buildCurrencySubcommand(String name) {
-        return ClientCommandManager.literal(name)
+        //? if < 26.1 {
+        // return ClientCommandManager.literal(name)
+        //?} else {
+        return ClientCommands.literal(name)
+        //?}
                 .executes(context -> {
                     showCurrency(StatsManager.StatsPeriod.LIFETIME, null);
                     return 1;
                 })
-                .then(ClientCommandManager.argument("period", StringArgumentType.greedyString())
+                //? if < 26.1 {
+                // .then(ClientCommandManager.argument("period", StringArgumentType.greedyString())
+                //?} else {
+                .then(ClientCommands.argument("period", StringArgumentType.greedyString())
+                //?}
                         .suggests((context, builder) -> {
                             builder.suggest("daily");
                             builder.suggest("weekly");
@@ -152,12 +180,20 @@ public class CommandManager {
     }
 
     private LiteralArgumentBuilder<FabricClientCommandSource> buildMessagesSubcommand(String name) {
-        return ClientCommandManager.literal(name)
+        //? if < 26.1 {
+        // return ClientCommandManager.literal(name)
+        //?} else {
+        return ClientCommands.literal(name)
+        //?}
                 .executes(context -> {
                     showCurrentMessageMode();
                     return 1;
                 })
-                .then(ClientCommandManager.argument("mode", StringArgumentType.word())
+                //? if < 26.1 {
+                // .then(ClientCommandManager.argument("mode", StringArgumentType.greedyString())
+                //?} else {
+                .then(ClientCommands.argument("mode", StringArgumentType.greedyString())
+                //?}
                         .suggests((context, builder) -> {
                             builder.suggest("all");
                             builder.suggest("off");
